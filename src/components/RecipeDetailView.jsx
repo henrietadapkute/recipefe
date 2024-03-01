@@ -32,18 +32,25 @@ const RecipeDetail = () => {
     navigate(`/edit/${recipeId}`);
   };
 
-  // Safeguard against null recipe
   if (!recipe) {
-    return <div>Loading recipe details...</div>;
+    return <div><div className="flex flex-col gap-4 w-52">
+  <div className="skeleton h-32 w-full"></div>
+  <div className="skeleton h-4 w-28"></div>
+  <div className="skeleton h-4 w-full"></div>
+  <div className="skeleton h-4 w-full"></div>
+</div></div>;
   }
 
   return (
     <div className="card card-compact w-full max-w-4xl bg-base-100 shadow-xl gap-4">
-      {/* {recipe.image && ( */}
-        <figure>
-          <img src={recipe.image} alt={recipe.title} />
-        </figure>
-      {/* )} */}
+      <figure style={{ paddingTop: '20px' }}>
+  <img
+    src='https://recipeland.com/images/v2/placeholders/recipe-18-19.jpg'
+    alt={recipe.title}
+    style={{ width: '200px', height: '200px' }} 
+    className="rounded-s"
+  />
+</figure>
       <div className="card-body">
         <h2 className="card-title">{recipe.title}</h2>
         <p>Category: {recipe.category?.name || 'Uncategorized'}</p>

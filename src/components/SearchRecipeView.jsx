@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { Bookmark, Heart } from 'lucide-react';
+import { Bookmark} from 'lucide-react';
 
 export default function RecipeSearch() {
   const [query, setQuery] = useState('');
   const [recipes, setRecipes] = useState([]);
   const [bookmarked, setBookmarked] = useState({});
-  const [favourite, setFavourite] = useState({});
+  // const [favourite, setFavourite] = useState({});
   const [expandedRecipeUri, setExpandedRecipeUri] = useState(null);
 
   useEffect(() => {
     const savedBookmarks = JSON.parse(localStorage.getItem('bookmarkedRecipes')) || {};
     const savedFavourites = JSON.parse(localStorage.getItem('favouriteRecipes')) || {};
     setBookmarked(savedBookmarks);
-    setFavourite(savedFavourites);
+    // setFavourite(savedFavourites);
     // eslint-disable-next-line
   }, []);
 
@@ -25,13 +25,13 @@ export default function RecipeSearch() {
     });
   };
 
-  const toggleFavourite = (recipeUri) => {
-    setFavourite((prev) => {
-      const updated = { ...prev, [recipeUri]: !prev[recipeUri] };
-      localStorage.setItem('favouriteRecipes', JSON.stringify(updated));
-      return updated;
-    });
-  };
+  // const toggleFavourite = (recipeUri) => {
+  //   setFavourite((prev) => {
+  //     const updated = { ...prev, [recipeUri]: !prev[recipeUri] };
+  //     localStorage.setItem('favouriteRecipes', JSON.stringify(updated));
+  //     return updated;
+  //   });
+  // };
 
 
   const handleSearch = async (event) => {
@@ -76,7 +76,7 @@ export default function RecipeSearch() {
         {recipes.map(({ recipe }) => {
           const isExpanded = recipe.uri === expandedRecipeUri;
           const isBookmarked = !!bookmarked[recipe.uri];
-          const isFavourite = !!favourite[recipe.uri];
+          // const isFavourite = !!favourite[recipe.uri];
 
           return (
             <div key={recipe.uri} className="card card-compact w-60 bg-base-100 shadow-xl" onClick={() => handleRecipeClick(recipe.uri)}>
@@ -103,9 +103,9 @@ export default function RecipeSearch() {
                   <button onClick={(e) => { e.stopPropagation(); toggleBookmark(recipe.uri); }} className="p-2 rounded-full hover:bg-gray-200">
                     <Bookmark color={isBookmarked ? 'red' : 'black'} />
                   </button>
-                  <button onClick={(e) => { e.stopPropagation(); toggleFavourite(recipe.uri); }} className="p-2 rounded-full hover:bg-gray-200">
+                  {/* <button onClick={(e) => { e.stopPropagation(); toggleFavourite(recipe.uri); }} className="p-2 rounded-full hover:bg-gray-200">
                     <Heart color={isFavourite ? 'red' : 'black'} />
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>

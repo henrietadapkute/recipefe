@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import RecipeView from "./RecipeView"
 import CategoryNavigation from "./CategoryView";
-import RecipeDetail from "./RecipeDetailView";
+import BookmarkedRecipes from "./Bookmarked";
 
 const MainPage = () => {
   const [message, setMessage] = useState("");
@@ -25,6 +25,7 @@ const MainPage = () => {
         }
       })();
     }
+    // eslint-disable-next-line
   }, []);
 
   return (
@@ -33,7 +34,7 @@ const MainPage = () => {
       <div className="artboard phone-5.5 text-left">
         <div className="flex justify-between items-center mb-4">
           <h1 className="text-4xl font-bold">Categories</h1>
-          <button className="btn btn-outline btn-accent">
+          <button className="btn btn-outline bg-primary-content">
             <a href="/createrecipe">Create a Recipe</a>
           </button>
         </div>
@@ -46,12 +47,12 @@ const MainPage = () => {
           <div className="flex-grow">
             <div className="recipe-view-container flex flex-wrap justify-start gap-4">
               <br />
-              <RecipeDetail />
+              
             </div>
           </div>
         </div>
         <br />
-        <h1 className="text-4xl font-bold">Saved Recipes</h1>
+        <BookmarkedRecipes />
       </div>
     </div>
   );

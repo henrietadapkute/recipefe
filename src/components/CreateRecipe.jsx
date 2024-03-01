@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {jwtDecode} from 'jwt-decode';
+import { useNavigate } from 'react-router-dom';
 
 function CreateRecipeForm() {
   const [categories, setCategories] = useState([]);
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     title: '',
     category: '', 
@@ -57,11 +59,13 @@ function CreateRecipeForm() {
 
     try {
       await axios.post(`${API_URL}/recipes/`, recipeData, {
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`
-        },
-      });
+  headers: {
+    'Content-Type': 'application/json',
+    Authorization: `Bearer ${token}`,
+  },
+});
+console.log('Recipe created successfully');
+navigate('/');
   
       setFormData({
         title: '',
