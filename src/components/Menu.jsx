@@ -56,9 +56,8 @@ export default function Mainmenu() {
             <button className="btn btn-ghost btn-circle">
               
   <div className="w-10 rounded-full">
-    <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-    
-  </div>
+  <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" alt="Profile avatar" />
+</div>
 </button></div>
 
       </div>

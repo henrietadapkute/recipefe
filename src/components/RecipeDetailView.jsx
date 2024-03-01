@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 const RecipeDetail = () => {
   const { id } = useParams();
-  const { getRecipeById, deleteRecipe, editRecipe } = useRecipes();
+  const { getRecipeById, deleteRecipe} = useRecipes();
   const [recipe, setRecipe] = useState(null);
   const navigate = useNavigate()
   useEffect(() => {
