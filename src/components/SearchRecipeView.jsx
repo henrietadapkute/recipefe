@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useRecipes } from '../Context/RecipeContext';
 import { Bookmark, Heart } from 'lucide-react';
 
 export default function RecipeSearch() {
@@ -8,13 +7,13 @@ export default function RecipeSearch() {
   const [bookmarked, setBookmarked] = useState({});
   const [favourite, setFavourite] = useState({});
   const [expandedRecipeUri, setExpandedRecipeUri] = useState(null);
-  const { getRecipes } = useRecipes();
 
   useEffect(() => {
     const savedBookmarks = JSON.parse(localStorage.getItem('bookmarkedRecipes')) || {};
     const savedFavourites = JSON.parse(localStorage.getItem('favouriteRecipes')) || {};
     setBookmarked(savedBookmarks);
     setFavourite(savedFavourites);
+    // eslint-disable-next-line
   }, []);
 
 

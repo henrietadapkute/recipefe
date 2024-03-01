@@ -21,6 +21,7 @@ const RecipeDetail = () => {
     if (id) {
       fetchRecipe();
     }
+    // eslint-disable-next-line
   }, []);
 
   const handleDelete = () => {

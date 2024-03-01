@@ -15,6 +15,7 @@ export default function RecipeView() {
     setBookmarked(savedBookmarks);
   }
   getRecipes();
+  // eslint-disable-next-line
 }, []);
 
   const toggleBookmark = recipeId => {
