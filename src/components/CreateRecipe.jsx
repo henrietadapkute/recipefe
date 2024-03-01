@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import {jwtDecode} from 'jwt-decode'; // Corrected import statement
+import {jwtDecode} from 'jwt-decode';
 
 function CreateRecipeForm() {
   const [categories, setCategories] = useState([]);
