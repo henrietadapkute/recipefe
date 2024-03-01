@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import { Bookmark } from 'lucide-react';
-import RecipeSearch from "./SearchRecipeView";
 import { useNavigate } from 'react-router-dom';
 
 export default function Mainmenu() {
@@ -17,6 +16,7 @@ export default function Mainmenu() {
 const handleSubmit = (event) => {
   navigate(`/search`); 
 };
+
   return (
     <div className="navbar bg-primary-content relative z-50">
       <div className="navbar-start">

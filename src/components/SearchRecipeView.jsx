@@ -10,7 +10,6 @@ export default function RecipeSearch() {
 
   useEffect(() => {
     const savedBookmarks = JSON.parse(localStorage.getItem('bookmarkedRecipes')) || {};
-    const savedFavourites = JSON.parse(localStorage.getItem('favouriteRecipes')) || {};
     setBookmarked(savedBookmarks);
     // setFavourite(savedFavourites);
     // eslint-disable-next-line
