@@ -29,26 +29,26 @@ export default function Login() {
     window.location.href = "/"
   }
   return (
-    <div className="hero min-h-screen neutral-content">
+    <div className="hero min-h-screen bg-white">
   <div className="hero-content flex-col lg:flex-row-reverse">
     <div className="text-center lg:text-left">
-      <h1 className="text-5xl font-bold">Log back in!</h1>
+      <h1 className="text-5xl p-6">Log back in!</h1>
     </div>
-    <div className="card shrink-0 w-full max-w-sm shadow-2xl neutral-content">
+    <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-indigo-200">
       <form className="card-body" onSubmit={handleSubmit}>
-        <div className="form-control neutral-content">
-          <label className="label neutral-content">
-            <span className="label-text bg-white-100">Username</span>
+        <div className=" bg-indigo-200">
+          <label className="label">
+            <span className="label-text font-bold">Username</span>
           </label>
-          <input type="text" ref={userRef} className="input input-bordered" required />
+          <input type="text" ref={userRef} className="input input-bordered bg-white" required />
         </div>
-        <div className="form-control neutral-content">
-          <label className="label neutral-content bg-white-100">
-            <span className="label-text bg-white-100">Password</span>
+        <div className=" bg-indigo-200">
+          <label className="label">
+            <span className="label-text font-bold">Password</span>
           </label>
-          <input type="password" ref={pwdRef} className="input input-bordered" required />
+          <input type="password" ref={pwdRef} className="input input-bordered bg-white" required />
         </div>
-        <div className="form-control mt-6">
+        <div className="form-control mt-6 bg-indigo-200">
           <button className="btn btn-primary" type="submit">Login</button>
         </div>
       </form>
