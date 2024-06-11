@@ -15,7 +15,7 @@ export default function Signup() {
     
        
     await axios.post(
-      `${process.env.REACT_APP_BACKEND_URL}/signup`,
+      `${process.env.REACT_APP_BACKEND_URL}/signup/`,
       user,
       {
         headers: { "Content-Type": "application/json" },
@@ -23,7 +23,7 @@ export default function Signup() {
       }
     );
 
-    window.location.href = "/login";
+    window.location.href = "/login/";
 }
 
 return (
