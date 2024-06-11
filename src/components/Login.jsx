@@ -1,9 +1,17 @@
 import axios from "axios";
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const userRef = useRef();
   const pwdRef = useRef();
+  const navigate = useNavigate()
+
+ const handleRegisterClick = () => {
+      navigate('/signup/');
+    };
+
+ 
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -11,6 +19,8 @@ export default function Login() {
       username: userRef.current.value,
       password: pwdRef.current.value,
     };
+
+   
 
     const { data } = await axios.post(
       `${process.env.REACT_APP_BACKEND_URL}/token/`,
@@ -27,10 +37,11 @@ export default function Login() {
     localStorage.setItem("refresh_token", data.refresh)
     axios.defaults.headers.common["Authorization"] = `Bearer ${data.access}`;
     window.location.href = "/"
-  }
+  } 
+
   return (
     <div className="hero min-h-screen bg-white">
-  <div className="hero-content flex-col lg:flex-row-reverse">
+  <div className="hero-content flex-col">
     <div className="text-center lg:text-left">
       <h1 className="text-5xl p-6">Log back in!</h1>
     </div>
@@ -53,7 +64,8 @@ export default function Login() {
         </div>
       </form>
     </div>
-  </div>
+   <button onClick={handleRegisterClick}>Register</button>
+  </div> 
 </div>
   );
 }
