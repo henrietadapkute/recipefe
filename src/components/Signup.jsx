@@ -27,32 +27,32 @@ export default function Signup() {
 }
 
 return (
-    <div className="hero min-h-screen bg-base-200">
+    <div className="hero min-h-screen bg-white">
   <div className="hero-content flex-col lg:flex-row-reverse">
     <div className="text-center lg:text-left">
-      <h1 className="text-5xl font-bold">Register</h1>
+      <h1 className="text-5xl">Register</h1>
     </div>
-    <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+    <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-indigo-200">
       <form className="card-body" onSubmit={handleSubmit}>
-        <div className="form-control">
+        <div className="text-bold">
           <label className="label">
-            <span className="label-text">Username</span>
+            <span className="text-bold">Username</span>
           </label>
-          <input type="text" ref={userRef} className="input input-bordered" required />
+          <input type="text" ref={userRef} className="input input-bordered bg-white" required />
         </div>
-         <div className="form-control">
+         <div className="text-bold">
           <label className="label">
-            <span className="label-text">Email</span>
+            <span className="text-bold">Email</span>
           </label>
-          <input type="email" ref={emailRef} className="input input-bordered" required />
+          <input type="email" ref={emailRef} className="input input-bordered bg-white" required />
         </div>
-        <div className="form-control">
+        <div className="text-bold">
           <label className="label">
-            <span className="label-text">Password</span>
+            <span className="text-bold">Password</span>
           </label>
-          <input type="password" ref={pwdRef} className="input input-bordered" required />
+          <input type="password" ref={pwdRef} className="input input-bordered bg-white" required />
         </div>
-        <div className="form-control mt-6">
+        <div className="form-control mt-6 bg-indigo-200">
           <button className="btn btn-primary" type="submit">Login</button>
         </div>
       </form>
