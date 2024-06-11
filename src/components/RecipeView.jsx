@@ -33,7 +33,7 @@ export default function RecipeView() {
   const openDetails = (recipeId) => {
     navigate(`/recipe/${recipeId}`);
   };
-
+ console.log(recipes)
   if (!recipes || recipes.length === 0) {
   return (
     <div className="flex justify-center items-center flex-wrap gap-8">

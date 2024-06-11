@@ -5,7 +5,8 @@ export default function CategoryNavigation() {
   return (
     <div>
       <ul className="menu menu-horizontal bg-base-200 p-0">
-        {categories.map((category) => (
+        { categories ?  
+        categories.map((category) => (
           <li key={category.id}  className="menu-item" onClick={() => fetchRecipesByCategory(category.name)}>
               <button
           onClick={(e) => {
@@ -17,7 +18,17 @@ export default function CategoryNavigation() {
           {category.name}
         </button>
           </li>
-        ))}
+        )) : <div className="flex justify-center items-center flex-wrap gap-8">
+        <div className="flex flex-col gap-4 w-52">
+       
+        </div>
+        <div className="flex flex-col gap-4 w-52">
+      
+        </div>
+        <div className="flex flex-col gap-4 w-52">
+         
+        </div>
+      </div> }
       </ul>
     </div>
   );

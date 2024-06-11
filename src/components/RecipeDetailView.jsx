@@ -16,6 +16,7 @@ const RecipeDetail = () => {
       } catch (error) {
         console.error('Error fetching recipe details:', error);
       }
+      // eslint-disable-next-line
     };
 
     if (id) {

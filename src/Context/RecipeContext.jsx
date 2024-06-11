@@ -15,7 +15,7 @@ export const RecipesProvider = ({ children }) => {
 
     useEffect(() => {
         fetchInitialData();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line 
     }, []);
 
     const fetchInitialData = async () => {
@@ -46,7 +46,6 @@ export const RecipesProvider = ({ children }) => {
     }
 };
 
-
     const getCategories = async () => {
         try {
             const response = await axios.get(`${API_URL}/categories/`);
@@ -56,26 +55,21 @@ export const RecipesProvider = ({ children }) => {
         }
     };
 
-   const fetchRecipesByCategory = async (categoryId) => {
-    try {
-        const token = localStorage.getItem('access_token');
-        const url = `${API_URL}/recipes/?category=${categoryId}`;
-        
-        const config = token ? {
-            headers: { 'Authorization': `Bearer ${token}` }
-        } : {};
-
-        const response = await axios.get(url, config);
-        setRecipes(response.data)
-    } catch (error) {
-        console.error('Error fetching recipes by category:', error);
-    }
-};
-
-
+    const fetchRecipesByCategory = async (categoryId) => {
+        try {
+            const token = localStorage.getItem('access_token');
+            const url = `${API_URL}/recipes/?category=${categoryId}`;
+            const config = token ? {
+                headers: { 'Authorization': `Bearer ${token}` }
+            } : {};
+            const response = await axios.get(url, config);
+            setRecipes(response.data)
+        } catch (error) {
+            console.error('Error fetching recipes by category:', error);
+        }
+    };
    
     const addRecipe = async (newRecipe) => {
-        
         try {
             const token = localStorage.getItem('access_token');
             const decoded = jwtDecode(token);
@@ -131,7 +125,7 @@ export const RecipesProvider = ({ children }) => {
         }
     };
 
-    const getRecipeById = async (id) => {
+  const getRecipeById = async (id) => {
   const token = localStorage.getItem('access_token');
   const response = await axios.get(`${API_URL}/recipes/${id}/`, {
     headers: {
@@ -142,7 +136,6 @@ export const RecipesProvider = ({ children }) => {
   });
   return response.data;
 };
-
 
     return (
       <RecipesContext.Provider

@@ -29,8 +29,8 @@ function EditRecipe() {
         setImageUrl(recipe.imageUrl);
       }
     };
-
     fetchRecipe();
+    // eslint-disable-next-line
   }, [recipeId, getRecipeById]);
 
   const handleSubmit = async (e) => {

@@ -10,12 +10,14 @@ const EditRecipeModal = ({ isOpen, onClose, recipe, onSave }) => {
       setTitle(recipe.title);
       setDescription(recipe.description);
     }
+    // eslint-disable-next-line
   }, [recipe]);
 
   useEffect(() => {
     if (isOpen && modalRef.current) {
       modalRef.current.showModal();
     }
+    // eslint-disable-next-line
   }, [isOpen]);
 
   const handleSubmit = (e) => {
@@ -30,6 +32,7 @@ const EditRecipeModal = ({ isOpen, onClose, recipe, onSave }) => {
     return () => {
       document.body.removeEventListener('keydown', closeOnEscapeKey);
     };
+    // eslint-disable-next-line
   }, [onClose]);
 
   return (

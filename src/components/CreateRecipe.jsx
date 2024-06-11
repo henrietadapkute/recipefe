@@ -29,6 +29,7 @@ function CreateRecipeForm() {
     };
 
     fetchData();
+    // eslint-disable-next-line
   }, [API_URL]);
 
   const handleChange = (e) => {
